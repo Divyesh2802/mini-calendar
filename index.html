@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Mini Calendar</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+  </head>
+  <body>
+    <div class="hero">
+      <h1>Today's Date is:</h1>
+      <div class="calendar">
+        <div class="left">
+          <p id="date">01</p>
+          <p id="day">Sunday</p>
+        </div>
+        <div class="right">
+          <p id="month">January</p>
+          <p id="year">2023</p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const date = document.getElementById('date');
+      const day = document.getElementById('day');
+      const month = document.getElementById('month');
+      const year = document.getElementById('year');
+
+      const today = new Date();
+
+      const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+      const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+
+      date.innerHTML = (today.getDate() < 10 ? "0" : "") + today.getDate();
+      day.innerHTML = days[today.getDay()];
+      month.innerHTML = months[today.getMonth()];
+      year.innerHTML = today.getFullYear();
+
+    </script>
+  </body>
+</html>
